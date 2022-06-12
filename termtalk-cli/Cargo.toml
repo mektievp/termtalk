@@ -1,0 +1,26 @@
+[package]
+name = "termtalk-cli"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+byteorder = "1.2"
+rpassword = "6.0.1"
+log = "0.4"
+futures = "0.3"
+tokio = { version = "*", features = ["full"] }
+actix-codec = "0.5"
+actix-web = "4"
+actix = "0.13"
+futures-util = { version = "0.3.7", default-features = false, features = ["std", "sink"] }
+tokio-stream = "0.1.8"
+env_logger = "0.9"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+reqwest = { version = "0.11", features = ["json"] }
+awc = "3.0.0-beta.21"
+redis = { version = "0.21.5", features = ["tokio-comp"] }
+dotenv = "0.15.0"
+colored = "2"

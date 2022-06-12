@@ -1,0 +1,2 @@
+rustfmt:
+	cargo fmt
