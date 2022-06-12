@@ -6,7 +6,7 @@ Actix Web framework is used due to its support of web sockets which allow Termta
 Future improvements for Termtalk include containerizing the application, developing the application and all of its components using Kubernetes minikube and Skaffold architecture, and persisting messages to Elasticsearch via a cron job as shown in the below diagram that would throttle the frequency of writes to prevent overloading Elasticsearch. Persisting messages would segue into developing search functionality for users to search messages from the past. For loading the most recent previous messages for a given room/direct chat Redis would again be used for caching to limit the number of calls to Elasticsearch as much as possible.
 
 # Starting the Application
-Termtalk API must be running in order for Termtalk to work. Must have Elasticsearch and Redis running on the same machine that Termtalk API is meant to run on. Once Elasticsearch and Redis are running configure the following env vars by creating a `.env` file inside of the `termtalk-api` dir:
+Termtalk API must be running in order for Termtalk to work. Must have Elasticsearch and Redis running on the same machine that Termtalk API is meant to run on. After installing Elasticsearch cd into the `elastic-manager` directory and run `cargo run` to create the necessary elastic search indexes with their respective mappings. Start Elasticsearch and Redis and configure the following env vars by creating a `.env` file inside of the `termtalk-api` dir:
 ```
 SECRET_KEY=some_secret_for_jwt_tokens
 RUST_LOG=debug
@@ -24,4 +24,4 @@ Once Elasticsearch and Redis are running, and you've created your `.env` file in
 From a separate terminal window you can cd into `termtalk-cli` and execute `cargo run` to register, login, and start chatting inside of Termtalk.
 
 # Termtalk System Design Diagram
-![alt text](https://github.com/mektievp/termtalk/blob/main/docs/termtalk-system-design.png?raw=true)
+![alt text](https://github.com/mektievp/termtalk/blob/master/docs/termtalk-system-design.png?raw=true)
